@@ -100,7 +100,7 @@ def load_all_data(videos_df, comments_df):
     create_table_if_not_exists(client, comments_table, COMMENTS_SCHEMA)
 
     videos_ok = load_to_bigquery(client, videos_df, videos_table, mode="WRITE_TRUNCATE")
-        comments_ok = load_to_bigquery(client, comments_df, comments_table, mode="WRITE_TRUNCATE")
+    comments_ok = load_to_bigquery(client, comments_df, comments_table, mode="WRITE_TRUNCATE")
 
     if videos_ok and comments_ok:
         logger.info("Load hoàn tất")
